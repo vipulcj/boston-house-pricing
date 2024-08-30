@@ -8,3 +8,5 @@
 4. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 
 Create a new environment using command - conda create -p venv python==3.12.3 -y
+
+[Deployed app](https://boston-house-pricing-gj0v.onrender.com)
