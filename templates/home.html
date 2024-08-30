@@ -1,38 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML API</title>
-</head>
-<body>
-    <div class="login">
-        <h1>Boston House Price Prediction</h1>
-
-        <form action="{{url_for('predict')}}"method="post">
-            <input type="text" name= 'CRIM' placeholder="CRIM" required = 'required' /><br>
-            <input type="text" name= 'ZN' placeholder="ZN" required = 'required' /><br>
-            <input type="text" name= 'INDUS' placeholder="INDUS" required = 'required' /><br>
-            <input type="text" name= 'CHAS' placeholder="CHAS" required = 'required' /><br>
-            <input type="text" name= 'NOX' placeholder="NOX" required = 'required' /><br>
-            <input type="text" name= 'RM' placeholder="RM" required = 'required' /><br>
-            <input type="text" name= 'AGE' placeholder="AGE" required = 'required' /><br>
-            <input type="text" name= 'DIS' placeholder="DIS" required = 'required' /><br>
-            <input type="text" name= 'RAD' placeholder="RAD" required = 'required' /><br>
-            <input type="text" name= 'TAX' placeholder="TAX" required = 'required' /><br>
-            <input type="text" name= 'PTRATIO' placeholder="PTRATIO" required = 'required' /><br>
-            <input type="text" name= 'B' placeholder="B" required = 'required' /><br>
-            <input type="text" name= 'LSTAT' placeholder="LSTAT" required = 'required' /><br>
-
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-
-        </form>
-
-        <br>
-        <br>
-
-    </div>
-    {{prediction_text}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <style>
+        .pred{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container my-3">
+        <h2>Boston House Price Prediction</h2>
+        <form action="{{url_for('predict')}}"method="post" >
+            <div class="mb-3">
+                <label for="Input" class="form-label">Per Capita Crime Rate</label>
+                <input type="text" name= 'CRIM' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Residential land zoned for lots over 25,000 sq.ft.</label>
+                <input type="text" name= 'ZN' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Proportion of non-retail business acres per town</label>
+                <input type="text" name= 'INDUS' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Charles River</label>
+                <input type="text" name= 'CHAS' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Nitric oxides concentration (parts per 10 million)</label>
+                <input type="text" name= 'NOX' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Average number of rooms per dwelling</label>
+                <input type="text" name= 'RM' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Proportion of owner-occupied units built prior to 1940</label>
+                <input type="text" name= 'AGE' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Weighted distances to five Boston employment centres</label>
+                <input type="text" name= 'DIS' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Index of accessibility to radial highways</label>
+                <input type="text" name= 'RAD' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Full-value property-tax rate per $10,000</label>
+                <input type="text" name= 'TAX' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">Pupil-teacher ratio by town</label>
+                <input type="text" name= 'PTRATIO' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town</label>
+                <input type="text" name= 'B' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Input" class="form-label">% lower status of the population</label>
+                <input type="text" name= 'LSTAT' class="form-control" id="Input" aria-describedby="emailHelp">
+            </div>
+
+        
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <div class="pred">{{prediction_text}}</div>
+    </div>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-</html> 
+
+</html>
