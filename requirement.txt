@@ -1,6 +1,12 @@
-Flask
-scikit-learn
-pandas
-numpy
-matplotlib
-gunicorn
+Flask==3.0.3
+scikit-learn==1.5.1
+pandas==2.2.2
+numpy==2.1.0
+matplotlib==3.9.2
+seaborn==0.13.2
+<<<<<<< HEAD
+gunicorn==23.0.0
+=======
+gunicorn==23.0.0
+
+>>>>>>> 3629e29e17af7341d8f495998bdc83a69692453a
